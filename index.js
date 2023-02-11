@@ -55,17 +55,20 @@ const compWin = (compChoice, userChoice) => {
   score.innerHTML = `${userScore}:${++compScore}`;
   result.innerHTML = `${compChoice} covers ${userChoice}. Comp win`;
   optionAnimation(userChoice, "lose");
+  fontAnimation(userChoice, "l");
 };
 
 const userWin = (userChoice, compChoice) => {
   score.innerHTML = `${++userScore}:${compScore}`;
   result.innerHTML = `${userChoice} covers ${compChoice}. User win`;
   optionAnimation(userChoice, "win");
+  fontAnimation(userChoice, "w");
 };
 
 const draw = (userChoice) => {
   result.innerHTML = "It's a draw. Keep going!";
   optionAnimation(userChoice, "draw");
+  fontAnimation(userChoice, "d");
 };
 
 /* Напишем функцию, которая при выборе иконки покрасит ее
@@ -78,5 +81,13 @@ const optionAnimation = (choice, selector) => {
   //Убираем цвет через 0.7 сек
   setTimeout(() => {
     link.classList.remove(selector);
+  }, 700);
+};
+
+const fontAnimation = (choice, col) => {
+  const link = document.querySelector(`.${choice}`);
+  result.classList.add(col);
+  setTimeout(() => {
+    result.classList.remove(col);
   }, 700);
 };

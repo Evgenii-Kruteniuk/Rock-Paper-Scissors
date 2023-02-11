@@ -20,10 +20,21 @@ header {
 
 main {
   width: 100%;
-  height: 90%;
+  height: 80%;
   background-color: rgb(5, 41, 71);
   box-sizing: border-box;
   padding: 2%;
+}
+
+footer {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Russo One", sans-serif;
+  font-weight: 100;
+  background-color: rgb(154, 157, 157);
 }
 
 .score {
@@ -74,6 +85,7 @@ main {
   text-align: center;
   letter-spacing: 1.5px;
   word-spacing: 3px;
+  transition: color 0.7s linear;
 }
 
 .options_block {
@@ -97,8 +109,7 @@ main {
   border: 3px solid white;
   border-radius: 50%;
   overflow: hidden;
-  background-size: 75%;
-  transition: background-color 0.7s;
+  transition: background-color 0.7s linear;
   cursor: pointer;
 }
 
@@ -109,13 +120,13 @@ main {
 }
 
 .Rock {
-  background: url(img/Rock.png) 50% / cover no-repeat;
+  background: url(img/Rock.png) 50% / 75% no-repeat;
 }
 .Paper {
-  background: url(img/Paper.png) 50% / cover no-repeat;
+  background: url(img/Paper.png) 50% / 75% no-repeat;
 }
 .Scissors {
-  background: url(img/Scissors.png) 50% / cover no-repeat;
+  background: url(img/Scissors.png) 50% / 75% no-repeat;
 }
 
 .win {
@@ -126,4 +137,55 @@ main {
 }
 .draw {
   background-color: rgb(11, 84, 144);
+}
+
+.w {
+  color: rgb(73, 143, 7);
+}
+.l {
+  color: rgb(143, 7, 7);
+}
+.d {
+  color: rgb(11, 84, 144);
+}
+
+header > h1 {
+  font-size: 30px;
+  animation: go 20s linear infinite alternate;
+}
+
+@keyframes go {
+  0% {
+    color: rgb(73, 143, 7);
+    transform: translate(-225%);
+  }
+  50% {
+    font-size: 70px;
+    color: black;
+  }
+  100% {
+    color: rgb(73, 143, 7);
+
+    transform: translate(225%);
+  }
+}
+
+footer > h1 {
+  font-size: 30px;
+  animation: goo 20s linear infinite alternate;
+}
+
+@keyframes goo {
+  0% {
+    color: rgb(143, 7, 7);
+    transform: translate(225%);
+  }
+  50% {
+    font-size: 50px;
+    color: rgb(11, 84, 144);
+  }
+  100% {
+    color: rgb(143, 7, 7);
+    transform: translate(-225%);
+  }
 }
